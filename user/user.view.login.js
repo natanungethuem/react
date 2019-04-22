@@ -33,8 +33,7 @@ export default class Login extends React.Component {
   submitForm(e) {
 
     var us = new UserService();
-    console.log( this.state );
-    us.login( { st_login: this.state.email, st_password: this.state.password } ).then( 
+    us.login( this.state ).then( 
       function( d ) {
         console.log( 'Funcionou' );
         console.log( d.data );

@@ -15,9 +15,7 @@ export default class Base {
         client.connect();
         const res = client.query( sql, params, 
             ( err, data ) => {
-                if( err ) throw err;
-
-                const result = callBack( data );
+                const result = callBack( data, err );
                 client.end();
                 return result;
             } );
