@@ -16,9 +16,9 @@ app.use(session({
     activeDuration: 5 * 60 * 1000,
 }));
 
-app.use( '/user', require( './user/user.route.open' ) );
-app.use( '/user', require( './user/user.route' ) );
-app.use( '/home', require( './home/home.route' ) );
+app.use( '/user', require( './back/user/user.route.open' ) );
+app.use( '/user', require( './back/user/user.route' ) );
+app.use( '/home', require( './back/home/home.route' ) );
 
 
 /**

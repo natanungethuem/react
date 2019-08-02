@@ -3,6 +3,7 @@ import UserService from './user.view.service';
 //import element     from './user.login.01.jsx';
 import { Button, FormGroup, FormFeedback, Container, Row, Col, Form, Label, Input, Alert } from "reactstrap";
 import { Link } from "react-router-dom";
+import { authContext } from '../utils/route.protected';
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -40,7 +41,8 @@ export default class Login extends React.Component {
         this.setState( { msg: '' } );
 
         const { history } = this.props;
-        return history.push( '/teste' );
+        authContext.userId = 1;
+        return history.push( '/test2' );
       } )
       .catch( d => {
         this.setState( { msg: 'Email ou senhas inválidos' } );
@@ -114,7 +116,17 @@ export default class Login extends React.Component {
       </Col>
       <Col></Col>
     </Row>
+    <Row>
+      <Col></Col>
+      <Col xs="auto">
+        <Link to="/teste">Teste</Link>
+      </Col>
+      <Col xs="auto">
+        <Link to="/test2">Teste2</Link>
+      </Col>
+
+      <Col></Col>
+    </Row>
     </Container>;
   }
-
 }
